@@ -60,7 +60,7 @@ export class NgFileSelectDirective implements OnChanges {
   }
 
   @HostListener('change') onChange(): void {
-    this.files = this.el.nativeElement.files;
+    this.files = Array.from(this.el.nativeElement.files);
     if (!this.files) {
       console.log('return');
       return;
